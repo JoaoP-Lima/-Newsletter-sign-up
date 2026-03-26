@@ -1,4 +1,4 @@
-const inputEmail = document.querySelector("#inputEmail");
+const inputEmail = document.querySelector("#input-email");
 const errorMessage = document.querySelector(".form-message-type_error");
 const form = document.querySelector("#card-form");
 const cardSuccess = document.querySelector(".card__success");
@@ -12,6 +12,7 @@ function showError(message) {
       inputEmail.classList.add("form-input-type_error");
         errorMessage.classList.add("form-message-error_active");
         errorMessage.textContent = message;
+        inputEmail.setAttribute("aria-invalid", "true");
        
 }
 
@@ -19,6 +20,7 @@ function hideError () {
       inputEmail.classList.remove("form-input-type_error");
         errorMessage.classList.remove("form-message-error_active");
         errorMessage.textContent = "";
+        inputEmail.setAttribute("aria-invalid", "false");
 }
 
 

@@ -19,9 +19,11 @@
     <link rel="stylesheet" href="./styles/style.css" />
   </head>
   <body>
+    
     <div class="page">
-      <div class="card-container">
-        <div class="card">
+      <main>
+      <section class="card-container">
+        <article class="card">
           <picture>
             <source
               media="(min-width: 1200px)"
@@ -36,6 +38,7 @@
             <img
               src="./assets/images/illustration-sign-up-mobile.svg"
               class="card__image"
+              alt="Illustration showing email subscription"
             />
           </picture>
 
@@ -57,15 +60,17 @@
             </ul>
             <form id="card-form" class="card__form" novalidate>
               <div class="card__label-content">
-              <label  class="card__form-label">Email address</label>
-              <span class="form-message-type_error">error</span>
+              <label for="input-email"  class="card__form-label">Email address</label>
+              <span class="form-message-type_error" id="email-error" aria-live="polite"></span>
               </div>
               <input
                 type="email"
                 placeholder="email@company.com"
-                id="inputEmail"
+                id="input-email"
                 required
                 class="card__form-input"
+                aria-describedby="email-error"
+                aria-invalid="false"
 
               />
               <button type="submit" class="card__form-button">
@@ -73,11 +78,11 @@
               </button>
             </form>
           </div>
-        </div>
-        <div class="card__success card-hidden">
+        </article>
+        <article class="card__success card-hidden">
           <img
             src="./assets/images/icon-success.svg"
-            alt=""
+            alt="Icon of success"
             class="card__success-image"
           />
           <h2 class="card__title">Thanks for subscribing!</h2>
@@ -89,9 +94,11 @@
           <button class="card__form-button" id="dismiss-button" type="button">
             Dismiss message
           </button>
-        </div>
-      </div>
+        </article>
+      </section>
+      </main>
     </div>
+ 
     <script src="./scripts/index.js"></script>
   </body>
 </html>
